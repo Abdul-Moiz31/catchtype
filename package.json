@@ -1,0 +1,38 @@
+{
+  "name": "catchtype",
+  "version": "0.1.0",
+  "description": "Typed error handling for TypeScript — discriminated unions, exhaustiveness checking, zero dependencies",
+  "keywords": [
+    "typescript",
+    "error-handling",
+    "result-type",
+    "discriminated-union",
+    "typed-errors",
+    "try-catch"
+  ],
+  "author": "Abdul Moiz",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
